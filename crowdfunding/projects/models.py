@@ -1,5 +1,7 @@
+# from crowdfunding.projects.serializers import ProjectDetailSerializer
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.db.models import Sum
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
@@ -13,6 +15,10 @@ class Project(models.Model):
         on_delete=models.CASCADE,
         related_name='owner_projects'
     )
+    def pledge_total(self):
+        value = Pledge.objects.filter(project=self.id).aggregate(Sum('amount'))
+        return value['amount__sum']
+
 
 class Pledge(models.Model):
     amount = models.IntegerField()
@@ -28,3 +34,4 @@ class Pledge(models.Model):
         on_delete=models.CASCADE,
         related_name='supporter_pledges'
     )
+
