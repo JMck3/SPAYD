@@ -8,6 +8,7 @@ from .models import Project, Pledge
 from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
 from .permissions import IsOwnerOrReadOnly
 
+
 class ProjectList(APIView):
     
     def get(self, request):
@@ -28,6 +29,7 @@ class ProjectList(APIView):
                 serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST
         )
+
 
 class ProjectDetail(APIView):
     permission_classes = [
@@ -64,6 +66,7 @@ class ProjectDetail(APIView):
         project = self.get_object(pk)
         project.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class PledgeList(APIView):
     
