@@ -33,8 +33,8 @@ Database Schema (please note 'pledge_date' still be be added to coding as improv
 
 ![image](https://user-images.githubusercontent.com/86637156/134755131-007057c4-c33e-49cb-82eb-0894bae301a6.png)
 
-Initial API Spec
+Current API Spec (yellow shaded to be completed)
+![image](https://user-images.githubusercontent.com/86637156/134788605-a69d4e3c-0885-4d80-9802-0c94e8b30e3a.png)
 
-![image](https://user-images.githubusercontent.com/86637156/134755579-4cd1738e-e93a-45d9-9216-06f6c0f72ee7.png)
 
  
